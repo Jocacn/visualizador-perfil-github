@@ -204,3 +204,59 @@ main {
   font-size: 2rem;
   font-weight: bold;
 }
+
+/* Repositorios */
+.profile-repositories {
+  margin: 32px auto 0;
+  width: 100%;
+  max-width: 980px;
+}
+
+.profile-repositories h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #2c2f39;
+  margin-bottom: 24px;
+}
+
+.repositories {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.repository-card {
+  border: 1px solid #e5e8ee;
+  border-radius: 10px;
+  padding: 18px 16px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(20, 26, 40, 0.06);
+}
+
+.repository-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #363b47;
+  margin-bottom: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.repository-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.repository-stats span {
+  display: block;
+  font-size: 0.78rem;
+  color: #667085;
+  background: #eceff3;
+  border-radius: 999px;
+  padding: 6px 10px;
+  line-height: 1.2;
+  text-align: left;
+}

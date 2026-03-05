@@ -133,3 +133,15 @@
     font-size: var(--font-xs);
   }
 }
+
+@media (max-width: 1024px) {
+  .repositories {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .repositories {
+    grid-template-columns: 1fr;
+  }
+}

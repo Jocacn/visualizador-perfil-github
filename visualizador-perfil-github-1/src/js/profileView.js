@@ -6,7 +6,22 @@ export function clearProfile(container) {
   container.innerHTML = '';
 }
 
-export function renderProfile(container, userData) {
+export function renderProfile(container, userData, userRepos) {
+
+  const repositoriesHTML = userRepos.length > 0 ? userRepos.map(repo => `
+    <div class= "repository-card">
+    <a href="${repo.html_url}" target="_blank">
+        <h3>${repo.name}</h3>
+          <div class= "repository-stats">
+            <span>⭐Stars ${repo.stargazers_count}</span>
+            <span>🍴Forks ${repo.forks_count}</span>
+            <span>👀Watchers ${repo.watchers_count}</span>
+            <span>💻Language: ${repo.language || 'Não informada'}</span>
+          </div>
+    </a>
+    </div>
+    `).join('') : `<p> Nenhum repositório encontrado.</p>`;
+
   const displayName = userData.name || userData.login;
   const bio = userData.bio || 'Não possui bio cadastrada 😢.';
 
@@ -28,6 +43,13 @@ export function renderProfile(container, userData) {
         <h4>👥Seguindo</h4>
         <span>${userData.following}</span>
       </div>
+    </div>
+
+    <div class="profile-repositories">
+        <h2>Repositórios</h2>
+        <div class="repositories">
+          ${repositoriesHTML}
+        </div>
     </div>
   `;
 }
